@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Counter</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", ()=>{
+
+                let counter= 0;
+                document.querySelector("#plus").onclick= ()=>{
+                    counter += 1;
+                    document.querySelector("h1").innerHTML= counter
+                }
+
+                document.querySelector("#minus").onclick=()=>{
+                    counter -=1;
+                    document.querySelector("h1").innerHTML=counter
+                }
+
+            })
+        </script>
+
+    </head>
+    <body>
+        <h1>0</h1>
+        <button id="plus">+</button>
+        <button id="minus">-</button> 
+    </body>
+</html>
