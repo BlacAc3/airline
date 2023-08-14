@@ -58,11 +58,11 @@ class FlightTestCase(TestCase):
         f = Flight.objects.get(origin=a1, destination=a1)
 
         c = Client()
-        response = c.get(f"/travels/{f.pk}")
+        response = c.get(f"/travels/{f.id}")
         self.assertEqual(response.status_code, 200)
 
     def test_invalid_flight_page(self):
-        max_id = Flight.objects.all().aggregate(Max("pk"))["pk__max"]
+        max_id = Flight.objects.all().aggregate(Max("id"))["id__max"]
 
         c = Client()
         response = c.get(f"/travels/{max_id + 1}")
